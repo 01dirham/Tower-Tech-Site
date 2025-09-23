@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tower Tech — School and Work</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="top"><div class="container row">
+  <div class="brand" data-i="brand">Tower Tech</div>
+  <div class="menu">
+    <a href="#home" class="active" data-i="nav_general">Ogólne</a>
+    <a href="#gallery" data-i="nav_gallery">Galeria</a>
+    <a href="#forms" data-i="nav_forms">Zgłoszenia</a>
+    <a href="#certs" data-i="nav_certs">Certyfikaty</a>
+    <a href="#contacts" data-i="nav_contacts">Kontakt</a>
+  </div>
+  <div class="lang mini" role="tablist" aria-label="Language">
+    <button role="tab" data-lang="pl" class="active">PL</button>
+    <button role="tab" data-lang="en">EN</button>
+    <button role="tab" data-lang="uk">UA</button>
+  </div>
+</div></nav>
+
+<header class="hero" id="home">
+  <div class="container"><div class="card">
+    <h1 data-i="hero_title">Tower Tech</h1>
+    <h2 data-i="hero_sub">School and Work</h2>
+  </div></div>
+</header>
+
+<section class="section" id="about">
+  <div class="container"><div class="card">
+    <p class="huge" data-md="about_text"></p>
+  </div></div>
+</section>
+
+<section class="section" id="requirements">
+  <div class="container"><div class="card">
+    <h3 data-i="req_title">Wymagania</h3>
+    <ul data-md="req_list"></ul>
+  </div></div>
+</section>
+
+<section class="section" id="apply-training">
+  <div class="container"><h2 data-i="apply_training_title">Zgłoszenie na szkolenie</h2></div>
+  <div class="container">
+    <form name="learn" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="learn"><p style="display:none"><label>Nie wypełniać: <input name="bot-field"></label></p>
+      <h3 data-i="learn_h3">Formularz: szkolenie</h3>
+      <label data-i="name">Imię i nazwisko</label><input type="text" name="name" required>
+      <label data-i="phone">Telefon / WhatsApp</label><input type="tel" name="phone" required>
+      <label data-i="email">Email</label><input type="email" name="email" required>
+      <label data-i="city">Miasto</label><input type="text" name="city">
+      <label data-i="polish_level">Poziom języka polskiego</label>
+      <select name="polish" data-i="polish_level">
+        <option>A1</option><option>A2</option><option>B1</option>
+        <option>B2</option><option>C1</option><option>C2</option>
+      </select>
+      <label data-i="comment">Komentarz</label><textarea name="comment" rows="4"></textarea>
+      <label class="consent"><input type="checkbox" name="consent" required> <span data-i="consent_text">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu.</span></label>
+<div data-netlify-recaptcha="true" style="margin:12px 0"></div>
+<button class="btn" type="submit" data-i="submit">Złóż zgłoszenie</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="post-course">
+  <div class="container"><div class="card">
+    <p class="big" data-md="post_course_text"></p>
+  </div></div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container"><h2 data-i="gallery_h2">Galeria</h2></div>
+  <div class="container">
+    <div class="carousel" aria-label="Foto-galeria">
+      <div class="track">
+        <div class="slide"><img src="assets/gallery/01.jpg" data-full="assets/gallery/01.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/02.jpg" data-full="assets/gallery/02.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/03.jpg" data-full="assets/gallery/03.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/04.jpg" data-full="assets/gallery/04.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/05.jpg" data-full="assets/gallery/05.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/06.jpg" data-full="assets/gallery/06.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/07.jpg" data-full="assets/gallery/07.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/08.jpg" data-full="assets/gallery/08.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/09.jpg" data-full="assets/gallery/09.jpg" alt=""></div>
+        <div class="slide"><img src="assets/gallery/10.jpg" data-full="assets/gallery/10.jpg" alt=""></div>
+        
+      </div>
+      <div class="nav">
+        <button class="btn-nav btn-prev" aria-label="Prev">‹</button>
+        <button class="btn-nav btn-next" aria-label="Next">›</button>
+      </div>
+      <div class="dots"></div>
+    </div>
+  </div>
+  <div class="lightbox"><img alt=""></div>
+</section>
+
+<section class="section" id="forms">
+  <div class="container"><div class="card">
+    <p class="big" data-md="work_invite"></p>
+  </div></div>
+  <div class="container">
+    <form name="work" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="work"><p style="display:none"><label>Nie wypełniać: <input name="bot-field"></label></p>
+      <h3 data-i="work_h3">Formularz: praca</h3>
+      <label data-i="name">Imię i nazwisko</label><input type="text" name="name" required>
+      <label data-i="phone">Telefon / WhatsApp</label><input type="tel" name="phone" required>
+      <label data-i="email">Email</label><input type="email" name="email" required>
+      <label data-i="city">Miasto</label><input type="text" name="city">
+      <label data-i="experience">Doświadczenie na żurawiu wieżowym</label>
+      <select name="experience" data-i="experience">
+        <option>Do 1 roku</option><option>2–3 lata</option><option>Powyżej 3 lat</option>
+      </select>
+      <label data-i="udt">Certyfikat/UDT</label><input type="text" name="udt" placeholder="UDT / numer / status">
+      <label data-i="cranes_q">Na jakich żurawiach masz doświadczenie?</label><input type="text" name="cranes">
+      <label data-i="comment">Komentarz</label><textarea name="comment" rows="4"></textarea>
+      <label class="consent"><input type="checkbox" name="consent" required> <span data-i="consent_text">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu.</span></label>
+<div data-netlify-recaptcha="true" style="margin:12px 0"></div>
+<button class="btn" type="submit" data-i="submit">Złóż zgłoszenie</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="certs">
+  <div class="container"><h2 data-i="certs_h2">Certyfikaty</h2></div>
+  <div class="container">
+    <h3 data-i="cert_title">Certyfikat Tower Tech</h3>
+    <div class="card" style="overflow:hidden;border-radius:14px;border:1px solid var(--stroke)">
+      <img src="assets/certs/cert1.jpg" alt="Certyfikat" style="width:100%;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="container">
+    <h2 data-i="contacts_h2">Kontakt</h2>
+    <p data-md="contacts_text"></p>
+  </div>
+</section>
+
+<footer><div class="container">© Tower Tech, 2025</div></footer>
+<script src="main.js"></script>
+<script src="multilang.js"></script>
+</body></html>
