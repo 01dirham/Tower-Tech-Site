@@ -83,3 +83,34 @@ footer{padding:30px 0;color:#9aa4a8;text-align:center}
 /* v11R14: consent checkbox styling */
 label.consent{display:flex;align-items:flex-start;gap:10px;margin:12px 0 6px;color:#dfe7ea}
 label.consent input[type="checkbox"]{margin-top:4px;transform:translateY(1px)}
+/* === Mobile Hotfix vM1 (≤ 768px) === */
+:target { scroll-margin-top: 80px; } /* якоря не прячутся под шапкой */
+
+@media (max-width: 768px) {
+  /* Заголовки и интервалы */
+  h1 { font-size: clamp(32px, 8vw, 54px); line-height: 1.1; }
+  h2 { font-size: clamp(18px, 4.8vw, 28px); }
+  #requirements h3 { font-size: 28px; }
+  .section { padding: 42px 0; }
+  .container { padding: 0 16px; }
+  .card { padding: 16px; }
+  .huge, .big, #requirements .card ul { font-size: 18px; line-height: 1.7; }
+
+  /* Хиро-блок — меньше отступ сверху, фон-подложка для читабельности */
+  .hero .card { margin-top: 0.2cm; padding: 8px 12px; background: rgba(0,0,0,.25); border-radius: 14px; }
+
+  /* Шапка и переключатель языков компактнее */
+  nav .row { min-height: 56px; }
+  .menu a { padding: 8px 10px; }
+  .lang.mini { gap: 4px; padding: 3px 4px; }
+
+  /* Карусель — ниже рост, чтобы текст не «уезжал» вниз */
+  .carousel .slide { height: 42vh; }
+
+  /* Переносы слов — чтобы длинные фразы не вываливались */
+  h1, h2, h3, p, li { overflow-wrap: anywhere; word-break: normal; }
+
+  /* Формы: читаемый размер на iOS (без автозумов) */
+  form label { font-size: 14px; }
+  input, select, textarea { font-size: 16px; }
+}
