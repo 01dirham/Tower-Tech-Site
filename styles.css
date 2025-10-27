@@ -83,34 +83,166 @@ footer{padding:30px 0;color:#9aa4a8;text-align:center}
 /* v11R14: consent checkbox styling */
 label.consent{display:flex;align-items:flex-start;gap:10px;margin:12px 0 6px;color:#dfe7ea}
 label.consent input[type="checkbox"]{margin-top:4px;transform:translateY(1px)}
-/* === Mobile Hotfix vM1 (≤ 768px) === */
-:target { scroll-margin-top: 80px; } /* якоря не прячутся под шапкой */
 
+/* === MOBILE VERSION OPTIMIZATION (<=768px) === */
 @media (max-width: 768px) {
-  /* Заголовки и интервалы */
-  h1 { font-size: clamp(32px, 8vw, 54px); line-height: 1.1; }
-  h2 { font-size: clamp(18px, 4.8vw, 28px); }
-  #requirements h3 { font-size: 28px; }
-  .section { padding: 42px 0; }
-  .container { padding: 0 16px; }
-  .card { padding: 16px; }
-  .huge, .big, #requirements .card ul { font-size: 18px; line-height: 1.7; }
 
-  /* Хиро-блок — меньше отступ сверху, фон-подложка для читабельности */
-  .hero .card { margin-top: 0.2cm; padding: 8px 12px; background: rgba(0,0,0,.25); border-radius: 14px; }
+  /* ФИКСИРОВАННАЯ ШАПКА */
+  header, nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  }
 
-  /* Шапка и переключатель языков компактнее */
-  nav .row { min-height: 56px; }
-  .menu a { padding: 8px 10px; }
-  .lang.mini { gap: 4px; padding: 3px 4px; }
+  nav .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+  }
 
-  /* Карусель — ниже рост, чтобы текст не «уезжал» вниз */
-  .carousel .slide { height: 42vh; }
+  nav .logo, .brand, h1.brand {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
 
-  /* Переносы слов — чтобы длинные фразы не вываливались */
-  h1, h2, h3, p, li { overflow-wrap: anywhere; word-break: normal; }
+  .menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
 
-  /* Формы: читаемый размер на iOS (без автозумов) */
-  form label { font-size: 14px; }
-  input, select, textarea { font-size: 16px; }
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .lang {
+    display: flex;
+    gap: 6px;
+  }
+
+  .lang button {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  /* ГЛАВНЫЙ ЗАГОЛОВОК */
+  .hero-title, h1 {
+    font-size: 26px;
+    text-align: center;
+    margin: 20px 10px;
+    line-height: 1.3;
+  }
+
+  /* ОСНОВНОЙ ТЕКСТ */
+  p, .section-text, .info-text {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0 12px;
+  }
+
+  /* БЛОКИ (ячейки) */
+  .content-box {
+    padding: 14px;
+    margin: 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* АНКЕТЫ */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  form label {
+    font-size: 15px;
+  }
+
+  input, select, textarea {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    width: 100%;
+  }
+
+  button, .submit-btn {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #ffd633;
+  }
+
+  /* ГАЛЕРЕЯ */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  /* СЕРТИФИКАТ */
+  .certificate img {
+    width: 90%;
+    max-width: 380px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  /* КОНТАКТЫ */
+  .contact {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-bottom: 20px;
+  }
+
+  /* ФУТЕР */
+  footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 12px 0;
+    background: rgba(0,0,0,0.8);
+  }
 }
